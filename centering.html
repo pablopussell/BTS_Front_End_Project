@@ -1,0 +1,84 @@
+<html>
+<head>
+	
+</head>
+<style>
+	.inline-block-center {
+		text-align: center;
+		background-color: black;
+		border-bottom: dashed 1.5px #e1e1e1;
+	}
+	.inline-block-center div {
+		background-color: #E18000;
+		display: inline-block;
+		color:white;
+		padding:15px;
+		margin:5px;
+		max-width: 125px;
+		vertical-align: middle;
+	}
+
+	.parent {
+		height:400px;
+		position:relative;
+		text-align: center;
+		background-color: #E18000;
+		border-top:dashed 1.5px #e1e1e1;
+		border-bottom: dashed 1.5px #e1e1e1;
+	}
+
+	.child {
+		background-color:black;
+		color:#e1e1e1;
+		position:absolute;
+		height:120px;
+		top:50%;
+		margin-top: -70px;
+		padding: 10px;
+	}
+
+	.parent1 {
+		height:400px;
+		position:relative;
+		text-align: center;
+		background-color: black;
+		border-top:dashed 1.5px #e1e1e1;
+	}
+
+	.child1 {
+		background-color:#E18000;
+		color:#e1e1e1;
+		position:absolute;
+		height:120px;
+		top:50%;
+		transform: translateY(-50%);
+		padding: 10px;
+	}
+
+</style>
+	<body>
+		<div class="inline-block-center">
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et urna porttitor, elementum erat vel, volutpat erat.
+			</div>
+			<div>
+				Vestibulum vehicula euismod neque, non porttitor diam tristique sed. Nunc laoreet quis felis a imperdiet. Sed ut turpis dignissim, vestibulum neque a, ultricies ante. Quisque enim neque, hendrerit et augue id, mattis tincidunt metus. Pellentesque viverra varius nisl quis mollis. Suspendisse ut fermentum ex. Donec sodales scelerisque eleifend.
+			</div>
+			<div>
+				Morbi non dui vehicula, maximus urna quis, egestas purus. Maecenas interdum gravida arcu id bibendum. Donec elementum commodo felis. Fusce at odio vel odio sollicitudin suscipit in a nunc.
+			</div>				
+		</div>
+
+		<div class="parent">
+			<div class="child">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et urna porttitor, elementum erat vel, volutpat erat.
+			</div>
+		</div>
+
+		<div class="parent1">
+			<div class="child1">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et urna porttitor, elementum erat vel, volutpat erat.
+			</div>			
+		</div>
+	</body>
+</html>

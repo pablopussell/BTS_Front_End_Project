@@ -1,0 +1,265 @@
+@primary-color: rgba(51,122,183, 0.8);
+@lighter-color: lighten(@primary-color, 30%);
+@darker-color: darken(@primary-color, 10%);
+@darkest-color: darken(@darker-color, 10%);
+
+
+/*************  GENERAL  *************************/
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Century Gothic',Arial,sans-serif;
+	
+}
+
+section, nav {
+	overflow: hidden;
+}
+
+img {
+    max-width: 100%; // this limits the width to the img width
+    height:auto;
+}
+
+.btn-default {
+	color: white;
+	background: url(../img/square-bg.png) repeat;
+	background-size: auto;
+	background-attachment: scroll;
+}
+.btn-default:hover{
+	color: white;
+	background-color: rgba(0,0,0,0.15);
+}
+
+/*************  HELPERS  *************************/
+
+.no-float {
+	float:none;
+}
+
+.outer-table {
+	display:table;
+	min-height: 900px;
+	margin: 0 auto;
+}
+
+/****************  NAV  *************************/
+
+nav {
+	background-color:@primary-color;
+	width:100%;
+	position:fixed;
+	z-index: 99;
+}
+
+nav h2 {
+	margin-top: 10px;
+	color:black;
+	font-weight: bold;
+	display:inline-block;
+	float:left;
+}
+
+.Nav {
+	display:inline-block;
+	position:relative;
+	float:right;
+	text-align: center;
+	width:50%;
+	height:100%;
+	padding:0px;
+	margin:0px;	
+}
+
+.Menu {
+	display:inline-block;
+	position:relative;
+	height:100%;
+	width:19.5%;
+	color:white;
+
+}
+
+.Menu:hover {
+	background-color: @lighter-color;
+}
+
+.NavLinks {
+	color:white;
+	font-size: 18px;
+	width:100%;
+	height:100%;
+	line-height: 3em;
+	margin:auto;
+}
+
+.NavLinks:hover {
+	text-decoration: none;
+	color:@darker-color;
+}
+
+
+/*************  HEADER  *************************/
+
+header{
+	position: relative;
+	width:100%;
+	height:800px;
+    /**background: url(../img/square-bg.png);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: auto;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;**/
+    background-color:#fff;
+}
+
+.header-content-inner {
+	margin: 0 auto;
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+h1 {
+	font-size: 6em;
+	text-transform: uppercase;
+	font-weight:900;
+}
+
+.transparency {
+	color:white;
+	position:relative;
+	background: url(../img/header.jpg) repeat;
+	background-attachment: scroll;
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position:absolute;
+}
+
+.titleshadow {
+	text-shadow: -2px -2px 0px black;
+	color: transparent;
+}
+
+.textshadow {
+	text-shadow: -1px -1px 0px black;
+	color: transparent;
+}
+
+.header-content-inner hr {
+	max-width: 50px;
+	border-color: @primary-color;
+	border-width: 3px;
+}
+
+.header-content-inner p {
+	font-size: 2em;
+}
+
+.header-content-inner a{
+	margin:60px;
+}	
+
+.btn-primary {
+	background-color:white;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid @darkest-color;
+	color:@primary-color;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	box-shadow: -2px -2px 0px @darkest-color;
+}
+.btn-primary:hover {
+	background-color:@primary-color;
+	color:white;
+}
+.btn-primary:active {
+	position:relative;
+	top:1px;
+}
+/*************  ABOUT  *************************/
+
+.about-outer {
+	margin:0 auto;
+}
+
+#about{
+	width:100%;
+	background-color: @primary-color;
+	padding: 20px 0 20px 0;
+}
+
+#about h2 {
+	color:#fff;
+	font-size: 2.5em;
+}
+
+#about hr{
+	max-width:50px;
+	border-color:#ffffff;
+	border-size:3px;
+}
+
+#about p{
+	color:#fff;
+	font-size: 16px;
+}
+
+#about a{
+	margin: 40px;
+}
+
+/************** SERVICES ***********************/
+
+#services{
+	margin: 50px 0 50px 0;
+	width:100%;
+	background-color: #fff;
+	padding:20px 0 20px 0;
+}
+
+#services h2{
+	color: #000000;
+	font-size: 2.5em;
+}
+
+#services hr {
+	max-width: 50px;
+	border-color: @primary-color;
+	border-width: 3px;
+}
+
+
+/************** PORTFOLIO ***********************/
+
+#portfolio{background-color: #ddd}
+
+/************** CTA ***********************/
+
+#cta{background-color: #99ff66}
+
+/************** CONTACT ***********************/
+
+#contact{background-color: #ff44ff}
+
+
+/************** FOOTER ***********************/
+
+
+
+
+/************** MEDIA QUERIES ******************/
+
+@media screen and (max-width: 768px) {
+	header{
+    
+	}
+}

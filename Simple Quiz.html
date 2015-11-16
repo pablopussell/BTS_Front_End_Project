@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A Simple Quiz</title>
+	<style>
+	body {
+		font-family: 'Century Gothic', sans-serif;
+		font-size: 18px;
+		line-height: 1.5em;
+	}
+	</style>
+</head>
+<body>
+	<h1>A Simple Quiz</h1>	
+</body>
+<footer>
+	<script>
+	var score = 0;
+	var questions = [
+	['2 + 6 ?', 8],
+	['4 + 3 ?', 7],
+	['5 + 11 ?', 16]
+	];
+
+	for (var i=0; i < questions.length; i++){
+		askQuestion(questions[i]);
+	}
+
+	function askQuestion(question){
+		var answer = prompt(question[0],'');
+		if (answer == question[1]){
+			score++;
+			alert("Correct!");
+		} else { alert("Try again dumb f**k!! " + "\n" + "Hint for retards: the correct answer is " + question[1]); }
+	}
+
+
+	var message = "You got " + score;
+	message += " out of " + questions.length;
+	message += " questions correct.";
+	document.write("<p>" + message + "</p>");
+	
+	</script>
+</footer>
+</html>

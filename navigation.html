@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<style>
+		body {
+			font-family: 'Century Gothic', sans-serif;
+		}
+		*{
+			padding:0px;
+			border:0px;
+			box-sizing: border-box;
+		}
+		
+		.logo {
+			width:30%;
+			background-color: red;
+			height:80px;
+			display:inline-block;
+		}
+
+		.main-nav {
+			border:1px solid #000;
+			width: 70%;
+			float:right;
+		}
+
+		.main-nav>ul {
+			display:table;
+			list-style: none;
+			margin:0 auto;
+			vertical-align: middle;
+
+		}
+
+		.main-nav>ul>li {
+			border-radius:10px;
+			text-align: center;
+			background-color: #64A7A8;
+			width:200px;
+			height:80px;
+			display: table-cell;
+			vertical-align: middle;
+			border:1px dashed #e1e1e1;
+			text-transform: uppercase;
+		}
+
+		.main-nav>ul>li>a{
+			text-decoration: none;
+			color:#e1e1e1;
+		}
+
+		.main-nav>ul>li>a:hover{
+			text-decoration: none;
+			color:#fff;
+		}
+
+
+		.drop-down, .seconddrop-down {
+			position:relative;
+		}
+
+		.drop-down::after{
+			content:"\25BC";
+			color:#e1e1e1;
+			font-size: 0.5em;
+			position:relative;
+			top:-3px;
+		}
+
+		.submenu, .secondsubmenu {
+			list-style:none;
+			background-color: #e1e1e1;
+			display:none;
+			position:absolute;
+			border-radius: 10px;
+			padding:10px 0 10px 0;
+		}
+
+		.secondsubmenu {
+			background-color: #64A7A8;
+		}
+
+		.submenu>li {
+			padding:0 0 5px 0;
+		}
+
+		.submenu>li>a {
+			color:#64A7A8;
+			text-decoration: none;
+		}
+
+		.submenu>li>a:hover {
+			color:#fff;
+		}	
+
+		.drop-down:hover > .submenu {
+			display:block;
+			min-width:200px;
+			padding: 20px 0;
+		}
+
+
+		.seconddrop-down::after{
+			content:"\25B6";
+			color:#64A7A8;
+			font-size: 0.5em;
+			position:relative;
+			top:-3px;
+		}
+
+		.secondsubmenu>li>a {
+			color:#e1e1e1;
+			text-decoration: none;
+		}
+
+		.secondsubmenu>li>a:hover {
+			color:#fff;
+		}
+
+		.secondsubmenu>li {
+			padding:0 0 5px 0;
+		}
+
+		.seconddrop-down:hover > .secondsubmenu {
+			display:block;
+			min-width:100px;
+			padding: 20px 0;
+			left:100%;
+			top:-2.5px;
+		}
+
+		/*.cl p {
+			line-height: 100px;
+			background-color: red;
+			text-align: center;
+			border-radius:50%;
+			width:100px;
+			height:100px;
+		}
+		*/
+		</style>	
+	</head>
+	<body>
+		<div class="outernav">
+		<div class="logo">
+		</div>	
+			<nav class="main-nav">
+				<ul class="menu">
+					<li><a href="#">About</a></li>
+					<li class="drop-down"><a href="#">Services</a>
+						<ul class="submenu">
+							<li><a href="#">Design</a></li>
+							<li class="seconddrop-down"><a href="#">Development</a>
+								<ul class="secondsubmenu">
+									<li><a href="#">Java</a></li>
+									<li><a href="#">Ruby</a></li>
+									<li><a href="#">C#</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Functionality</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Portfolio</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+			<!--<div class="cl">
+			<p>HELLO</p>
+		</div>-->
+	</body>
+</html>
