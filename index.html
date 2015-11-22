@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://use.fonticons.com/2f7ae1ef.js"></script>
 
     <title>Creative - Start Bootstrap Theme</title>
 
@@ -21,6 +22,7 @@
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link href="css/lightbox.css" rel="stylesheet">
 
     <!-- Custom CSS -->
    <!---*********** <link rel="stylesheet" href="css/creative.css" type="text/css">************-->
@@ -37,35 +39,42 @@
 
 <body id="page-top">
 
+<!-- Video experiment !-->
+
+  
     <nav id="mainNav" >
-
-        <h2>CLASSY MENU</h2>
-
+        <video autoplay poster="img/Barcelona-Technology-School-cropped.jpg" id="bgvid">
+            <source src="img/Barcelona-Technology-School-cropped.webm" type="video/webm">
+            <source src="img/Barcelona-Technology-School-cropped.mp4" type="video/mp4">
+        </video>
+        <div class="bts-logo-div">
+            <img src="img/BTS-logo.svg" alt="Barcelona Technology School" class="bts-logo">
+        </div>
         <ul class="Nav">
-            <li class="Menu"><a href="#Home" class="NavLinks">Home</a></li>
-            <li class="Menu"><a href="#Themes" class="NavLinks">Themes</a></li>
-            <li class="Menu"><a href="#TipsTricks" class="NavLinks">Tips & tricks</a></li>
-            <li class="Menu"><a href="#AboutMe" class="NavLinks">About Me</a></li>
-            <li class="Menu"><a href="#Contact" class="NavLinks">Contact</a></li>
+                <li class="Menu" onclick="$('header').animatescroll({padding:200});"><a class="NavLinks" onclick="$('header').animatescroll({padding:200});">Home</a></li>
+                <li class="Menu" onclick="$('#about').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#about').animatescroll({padding:200});">About</a></li>
+                <li class="Menu"  onclick="$('#services').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#services').animatescroll({padding:200});">Services</a></li>
+                <li class="Menu" onclick="$('#portfolio').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#portfolio').animatescroll({padding:200});">Portfolio</a></li>
+                <li class="Menu MenuNoBorder"  onclick="$('#contact').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#contact').animatescroll({padding:200});">Contact</a></li>
         </ul>
         
     </nav>
 
     <header>
-        <div class="outer-table no-float text-center">
+        <div id="header-outer" class="outer-table no-float text-center">
             <div class="header-content-inner">
-                <h1 class="transparency">Your Favorite Source of Free Bootstrap Themes</h1>
-                <h1 class="titleshadow">Your Favorite Source of Free Bootstrap Themes</h1>
+                <h1 id="head" class="transparency">Student Blog</h1>
+                <h1 id="headshadow" class="titleshadow">Student Blog</h1>
                 <hr>
-                <p class="transparency">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <p class="textshadow">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <p id="text" class="transparency">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                <p id="textshadow" class="textshadow">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                <a class="btn btn-primary btn-xl page-scroll"  onclick="$('#about').animatescroll({padding:200});">Find Out More</a>
             </div>
         </div>
     </header>
     
     <section  id="about" class="container-fluid">
-        <div class="about-outer col-xs-10 col-lg-6 no-float text-center">
+        <div class="about-outer col-xs-10 col-lg-8 no-float text-center">
              <h2 class="section-heading">We've got what you need!</h2>
              <hr class="light">
              <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
@@ -74,28 +83,33 @@
     </section>
 
     <section id="services" class="container-fluid">
-       <h2 class="section-heading text-center">At Your Service</h2>
+       <h2 class="section-heading text-center">Do Things the Right Way</h2>
         <hr class="primary">
         <div class="services text-center row">
             <div class="service1 col-md-6 col-lg-3 text-center">
-                HELLO
+                <i class="icon icon-youtube-play"></i>
+                <p class="servicesText">Play</p>
             </div>
             <div class="service2 col-md-6 col-lg-3 text-center">
-                HELLO
+                <i class="icon icon-location-arrow"></i>
+                <p class="servicesText">Find</p>
             </div>
             <div class="service3 col-md-6 col-lg-3 text-center">
-                HELLO
+                <i class="icon icon-leaf"></i>
+                <p class="servicesText">Be Green</p>
             </div>
             <div class="service4 col-md-6 col-lg-3 text-center">
-                HELLO
+                <i class="icon icon-star"></i>
+                <p class="servicesText">...and Shine Like a Star!</p>
             </div>
         </div>
     </section>
 
-    <section  id="portfolio" class="container-fluid row">
-         <h2 class="section-heading text-center">PORTFOLIO</h2>
+    <section  id="events" class="container-fluid">
+         <h2 class="section-heading text-center">Events</h2>
         <div class="col-md-6 col-lg-3 text-center">
-            Picture
+            <a class="first-event" href="img/first-event.jpg" data-lightbox="first-event" data-title="First Event"><img id="FirstEvent" src="img/first-event.jpg" alt="First Event"></img></a>
+            <h3 class="event-name">First Event</h3>
         </div>
         <div class="col-md-6 col-lg-3 text-center">
             Picture
@@ -121,9 +135,21 @@
            CONTACT
         </h2>
     </section>
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <div class="ScrollToTop">
+        <a href="#" class="scrollToTop"><i class="icon icon-arrow-up"></i></a>
+    </div>
 
+    <!-- jQuery -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/animatescroll.js"></script>
+    <script src="js/jquery.freetile.js"></script>
+    <script>
+        jQuery("#head").fitText();
+        jQuery("#headshadow").fitText();
+    </script>
+    <script src="js/lightbox.js"></script>
    
 
 </body>

@@ -1,7 +1,10 @@
-@primary-color: rgba(51,122,183, 0.8);
-@lighter-color: lighten(@primary-color, 30%);
+/*@primary-color: #84B1B5;*/
+@primary-color: #1B9DD9;
+@lightest-color: lighten(@lighter-color, 15%);
+@lighter-color: lighten(@primary-color, 15%);
 @darker-color: darken(@primary-color, 10%);
 @darkest-color: darken(@darker-color, 10%);
+@grey:#E6E7E8;
 
 
 /*************  GENERAL  *************************/
@@ -10,6 +13,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Century Gothic',Arial,sans-serif;
+    background: url(../img/debut-light.png) repeat;
 	
 }
 
@@ -20,6 +24,18 @@ section, nav {
 img {
     max-width: 100%; // this limits the width to the img width
     height:auto;
+}
+
+.bts-logo-div {
+	width:100%;
+	margin:auto auto;
+	text-align: center;
+}
+
+.bts-logo {
+	visibility: hidden;
+	width:20%;
+	padding:20px 10px;
 }
 
 .btn-default {
@@ -41,33 +57,54 @@ img {
 
 .outer-table {
 	display:table;
-	min-height: 900px;
 	margin: 0 auto;
 }
 
 /****************  NAV  *************************/
+/** VIDEO EXP **/
+
+video#bgvid { 
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(/img/Barcelona-Technology-School-cropped.jpg) no-repeat;
+    background-size: cover; 
+}
+
+#mainNav {
+	box-shadow: 10px 0px 15px #818181;
+	max-height:300px;
+}
 
 nav {
-	background-color:@primary-color;
+
+	/**background-color: @primary-color;**/
+	background-color: transparent;
 	width:100%;
 	position:fixed;
-	z-index: 99;
+	z-index: 2;
 }
 
 nav h2 {
 	margin-top: 10px;
-	color:black;
+	color:white;
 	font-weight: bold;
 	display:inline-block;
 	float:left;
 }
 
 .Nav {
+	background-color: rgba(0,0,0,0.5);
 	display:inline-block;
 	position:relative;
-	float:right;
 	text-align: center;
-	width:50%;
+	width:100%;
 	height:100%;
 	padding:0px;
 	margin:0px;	
@@ -77,13 +114,22 @@ nav h2 {
 	display:inline-block;
 	position:relative;
 	height:100%;
-	width:19.5%;
+	width:19%;
 	color:white;
+	box-shadow: 1px 25px 0px @grey;
+	margin-left: -3px;
+}
 
+.MenuNoBorder{
+	box-shadow: none;
 }
 
 .Menu:hover {
-	background-color: @lighter-color;
+	background-color: @primary-color;
+}
+
+.Menu:hover > a {
+	color:white;
 }
 
 .NavLinks {
@@ -103,45 +149,40 @@ nav h2 {
 
 /*************  HEADER  *************************/
 
+
 header{
 	position: relative;
 	width:100%;
-	height:800px;
-    /**background: url(../img/square-bg.png);
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: auto;
-    -webkit-background-size: auto;
-    -moz-background-size: auto;
-    -o-background-size: auto;**/
-    background-color:#fff;
 }
 
 .header-content-inner {
-	margin: 0 auto;
-	display:table-cell;
+	padding-top: 30%;
+    padding-bottom: 15%;
+	margin: auto auto;
+	display:block;
 	vertical-align: middle;
 	text-align: center;
 }
 
 h1 {
-	font-size: 6em;
 	text-transform: uppercase;
 	font-weight:900;
 }
 
 .transparency {
 	color:white;
-	position:relative;
-	background: url(../img/header.jpg) repeat;
+	position:absolute;
+	width:100%;
+	background: url(../img/code.jpg) repeat;
 	background-attachment: scroll;
+	background-size: contain;
+    background-position-y: 35px;
 	-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    position:absolute;
 }
 
 .titleshadow {
+	margin-top: 20px;
 	text-shadow: -2px -2px 0px black;
 	color: transparent;
 }
@@ -158,7 +199,7 @@ h1 {
 }
 
 .header-content-inner p {
-	font-size: 2em;
+	font-size: 1.7em;
 }
 
 .header-content-inner a{
@@ -192,14 +233,14 @@ h1 {
 }
 
 #about{
-	width:100%;
+
 	background-color: @primary-color;
-	padding: 20px 0 20px 0;
+	padding: 70px 0 70px 0;
 }
 
 #about h2 {
 	color:#fff;
-	font-size: 2.5em;
+	font-size: 3em;
 }
 
 #about hr{
@@ -210,11 +251,12 @@ h1 {
 
 #about p{
 	color:#fff;
-	font-size: 16px;
+	font-size: 1.4em;
 }
 
 #about a{
 	margin: 40px;
+	font-size: 1.6em;
 }
 
 /************** SERVICES ***********************/
@@ -222,38 +264,90 @@ h1 {
 #services{
 	margin: 50px 0 50px 0;
 	width:100%;
-	background-color: #fff;
+	background-color: transparent;
 	padding:20px 0 20px 0;
 }
 
 #services h2{
-	color: #000000;
+	color:@darkest-color;
 	font-size: 2.5em;
 }
 
 #services hr {
 	max-width: 50px;
 	border-color: @primary-color;
-	border-width: 3px;
+	border-width: 1px;
+}
+
+.icon {
+	font-size: 5em;
+	color:@darkest-color;
+}
+
+.servicesText {
+	padding: 30px 0px 30px 0px;
+	font-size: 1.5em;
 }
 
 
 /************** PORTFOLIO ***********************/
 
-#portfolio{background-color: #ddd}
+#events {
+	background-color: @lighter-color;
+}
+
+img#FirstEvent {
+	
+}
+
+.first-event {
+	margin: 0 0.5rem 1rem 0.5rem;
+	outline:0;
+	background-color:white;
+}
 
 /************** CTA ***********************/
 
-#cta{background-color: #99ff66}
+#cta{
+	background-color: transparent;
+}
+
+#cta > a {
+	background-color:@primary-color;
+}
+
+#cta > a:hover {
+	background-color:@darker-color;
+	color:white;
+}
 
 /************** CONTACT ***********************/
 
-#contact{background-color: #ff44ff}
+#contact{
+	background-color: @lightest-color;
+}
 
 
 /************** FOOTER ***********************/
 
-
+.scrollToTop{
+	width:100px; 
+	height:130px;
+	padding:10px; 
+	text-align:center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	top:75px;
+	right:40px;
+	display:none;
+	background: @grey no-repeat 0px 20px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
 
 
 /************** MEDIA QUERIES ******************/
