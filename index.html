@@ -43,19 +43,25 @@
 
   
     <nav id="mainNav" >
-        <video autoplay poster="img/Barcelona-Technology-School-cropped.jpg" id="bgvid">
+        <video id="bgvid" controls poster="img/Barcelona-Technology-School-cropped.jpg">
             <source src="img/Barcelona-Technology-School-cropped.webm" type="video/webm">
             <source src="img/Barcelona-Technology-School-cropped.mp4" type="video/mp4">
+            <source src="img/Barcelona-Technology-School-cropped.ogv" type="video/ogv">
         </video>
+        <div id="controls">
+         <button id="start"><i id="startIcon" class="icon icon-play"></i></button>
+         <button id="pause" disabled><i id="pauseIcon" class="icon icon-pause"></i></button>
+         <button id="stop" disabled><i id="stopIcon" class="icon icon-stop"></i></button>
+      </div>
         <div class="bts-logo-div">
             <img src="img/BTS-logo.svg" alt="Barcelona Technology School" class="bts-logo">
         </div>
-        <ul class="Nav">
-                <li class="Menu" onclick="$('header').animatescroll({padding:200});"><a class="NavLinks" onclick="$('header').animatescroll({padding:200});">Home</a></li>
-                <li class="Menu" onclick="$('#about').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#about').animatescroll({padding:200});">About</a></li>
-                <li class="Menu"  onclick="$('#services').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#services').animatescroll({padding:200});">Services</a></li>
-                <li class="Menu" onclick="$('#portfolio').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#portfolio').animatescroll({padding:200});">Portfolio</a></li>
-                <li class="Menu MenuNoBorder"  onclick="$('#contact').animatescroll({padding:200});"><a class="NavLinks" onclick="$('#contact').animatescroll({padding:200});">Contact</a></li>
+        <ul class="Nav" id="Nav">
+                <li class="Menu" onclick="$('header').animatescroll({padding:200});"><a id="navLink1" class="NavLinks" onclick="$('header').animatescroll({padding:200});">Home</a></li>
+                <li class="Menu" onclick="$('#about').animatescroll({padding:200});"><a id="navLink2" class="NavLinks" onclick="$('#about').animatescroll({padding:200});">About</a></li>
+                <li class="Menu"  onclick="$('#services').animatescroll({padding:200});"><a id="navLink3" class="NavLinks" onclick="$('#services').animatescroll({padding:200});">Services</a></li>
+                <li class="Menu" onclick="$('#events').animatescroll({padding:200});"><a id="navLink4"class="NavLinks" onclick="$('#events').animatescroll({padding:200});">Events</a></li>
+                <li class="Menu MenuNoBorder"  onclick="$('#contact').animatescroll({padding:200});"><a id="navLink5"class="NavLinks" onclick="$('#contact').animatescroll({padding:200});">Contact</a></li>
         </ul>
         
     </nav>
@@ -144,12 +150,13 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/animatescroll.js"></script>
-    <script src="js/jquery.freetile.js"></script>
     <script>
         jQuery("#head").fitText();
         jQuery("#headshadow").fitText();
     </script>
     <script src="js/lightbox.js"></script>
+    <script src="js/videocontrols.js"></script>
+    <script src="js/scrolltotop.js"></script>
    
 
 </body>
