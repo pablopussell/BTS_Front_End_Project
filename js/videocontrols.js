@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
        // if pause button is pushed, the media play is paused
        function pausePlayback() {
           document.getElementById("bgvid").pause();
+          document.getElementById("Nav").style.background="rgba(255,255,255,1)";
+          document.getElementById("controls").style.background="rgba(255,255,255,1)";
        }
        //if stop button is pushed, the media play stops and the current play time is reset to 0
        function stopPlayback() {
