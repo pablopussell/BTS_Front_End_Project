@@ -5,16 +5,26 @@
 @darker-color: darken(@primary-color, 10%);
 @darkest-color: darken(@darker-color, 10%);
 @grey:#E6E7E8;
+@black:#4C4C4E;
 
 
 /*************  GENERAL  *************************/
+*{
+	margin:0;
+	padding:0;
+}
+
 html,
 body {
-    width: 100%;
-    height: 100%;
     font-family: 'Century Gothic',Arial,sans-serif;
     background: url(../img/debut-light.png) repeat;
 	
+}
+
+hr {
+	margin:0 auto;
+	margin:30px auto 30px auto;
+	border-width:3px;
 }
 
 section, nav {
@@ -28,12 +38,15 @@ img {
 
 .bts-logo-div {
 	width:100%;
+	max-height: 300px;
 	margin:auto auto;
 	text-align: center;
+	background-color: @primary-color;
+	position: relative;
+	overflow:hidden;
 }
 
 .bts-logo {
-	visibility: hidden;
 	width:20%;
 	padding:20px 10px;
 }
@@ -56,7 +69,6 @@ img {
 }
 
 .outer-table {
-	display:table;
 	margin: 0 auto;
 }
 
@@ -70,11 +82,25 @@ video#bgvid {
     min-width: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: 0;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background: url(../img/Barcelona-Technology-School-cropped.jpg) no-repeat;
     background-size: cover; 
+}
+
+@media screen and (min-width: 1450px) and (max-width: 1749px) {
+	
+	video#bgvid {
+    	top: 165px;    	
+	}
+}
+
+@media screen and (min-width: 1750px) {
+	
+	video#bgvid {
+    	top: 200px;    	
+	}
 }
 
 #start, #stop, #pause {
@@ -83,7 +109,6 @@ video#bgvid {
 	height:20px;
     color: white;
     background-color: transparent;
-    box-shadow: 1px 17px 0 black;
     margin-left: -3px;
 }
 
@@ -99,6 +124,7 @@ video#bgvid {
         overflow: hidden;
         border-radius: 4px;
         height:20px;
+        z-index: 99;
 }
 
 .icon-play, .icon-pause, .icon-stop {
@@ -133,7 +159,7 @@ nav h2 {
 	display:inline-block;
 	position:relative;
 	text-align: center;
-	width:100%;
+	width:90%;
 	height:100%;
 	padding:0px;
 	margin:0px;	
@@ -145,27 +171,21 @@ nav h2 {
 	position:relative;
 	height:100%;
 	width:19%;
-	color:black;
-	box-shadow: 1px 32px 0px black;
-	margin-left: -3px;
 	font-weight: bold;
     letter-spacing: 0.2em;
 }
 
-.MenuNoBorder{
-	box-shadow: none;
-}
-
 .Menu:hover {
 	background-color: rgba(27, 157, 217, 0.5);
+	border-radius: 4px; 
 }
 
 .Menu:hover > a {
-	color:black;
+	color:white;
 }
 
 .NavLinks {
-	color:black;
+	color:@black;
 	font-size: 18px;
 	width:100%;
 	height:100%;
@@ -188,7 +208,7 @@ header{
 }
 
 .header-content-inner {
-	padding-top: 30%;
+	padding-top: 20%;
     padding-bottom: 15%;
 	margin: auto auto;
 	display:block;
@@ -196,38 +216,38 @@ header{
 	text-align: center;
 }
 
+@media screen and (max-width: 960px) {
+	
+	.header-content-inner {
+    	padding-top: 40%;     	
+	}
+}
+
+
+.header-content-inner h1,p {
+	max-width: 1750px;
+}
+
 h1 {
 	text-transform: uppercase;
 	font-weight:900;
 }
 
-.transparency {
-	color:white;
-	position:absolute;
+#head, #text {
+	position:relative;
+	margin:0 auto;
 	width:100%;
 	background: url(../img/code.jpg) repeat;
 	background-attachment: scroll;
 	background-size: contain;
-    background-position-y: 35px;
 	-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.titleshadow {
-	margin-top: 20px;
-	text-shadow: -2px -2px 0px black;
-	color: transparent;
-}
-
-.textshadow {
-	text-shadow: -1px -1px 0px black;
-	color: transparent;
-}
-
 .header-content-inner hr {
+	text-align: center;
 	max-width: 50px;
 	border-color: @primary-color;
-	border-width: 3px;
 }
 
 .header-content-inner p {
@@ -278,7 +298,6 @@ h1 {
 #about hr{
 	max-width:50px;
 	border-color:#ffffff;
-	border-size:3px;
 }
 
 #about p{
@@ -377,6 +396,7 @@ img#FirstEvent {
 	right:25px;
 	display:none;
 	background: @grey no-repeat 0px 20px;
+	box-shadow: 1px 1px 5px #818181;
 }
 .scrollToTop:hover{
 	color:@darkest-color;
@@ -385,8 +405,3 @@ img#FirstEvent {
 
 /************** MEDIA QUERIES ******************/
 
-@media screen and (max-width: 768px) {
-	header{
-    
-	}
-}

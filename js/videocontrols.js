@@ -45,8 +45,6 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
        //if stop button is pushed, the media play stops and the current play time is reset to 0
        function stopPlayback() {
           var bgvid = document.getElementById("bgvid");
-          bgvid.pause();
-          bgvid.currentTime=67;
           endPlayback();
        }  
   /**if the plus button is pushed, the sound volume is increased by 10%
@@ -88,4 +86,7 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
           document.getElementById("stop").disabled=true;
           document.getElementById("Nav").style.background="rgba(255,255,255,1)";
           document.getElementById("controls").style.background="rgba(255,255,255,1)";
+          $("#controls").hide();
+          $("#bgvid").fadeOut("12000");
+          $("bts-logo-div").fadeIn("12000");
        }
