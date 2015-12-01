@@ -1,0 +1,214 @@
+<!--  CSS TRANSFORMS 
+	The transform property allows you to visually manipulate an element by skewing, rotating, translating, or scaling:
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Transforms</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+	<div class=" wrap">
+
+		<!--To apply a CSS transform, we create a css rule and apply it to a selector
+		    For example, scale on hover. Thi swill create a 100% CSS effect.
+		    We can get the same results using javascript (ex. animate)
+
+		    We can also use a hibrid method. and use js to add/remove the class that perfoms the animation
+		     -->
+
+
+		<!-- SCALE-->
+
+		<div class="box scale">One</div>
+		<div class="box scale">Two</div>
+		<div class="box scale">Three</div>
+
+        <div style="clear:both"></div>
+
+
+        <!--TANSITION on hover-->
+        <div class=" box scale-h">
+			SCALE
+		</div>
+
+        <!--LET'S USE JS TO SCALE THE DIV-->
+		<h2>USING JS</h2>
+        <div style="clear:both"></div>
+        <div class=" box scale-h-js">
+			SCALE HOVER JS
+		</div>
+
+        <div class=" box scale-c-js">
+			SCALE ADD CLASS JS
+		</div>
+
+
+        <div class=" box scale-t-js">
+			HOVER TOGGLE CLASS JS
+		</div>
+
+
+		<div class=" box scale-ck-js">
+			CLICK JS
+		</div>
+
+
+		<!--ON CLICK-->
+		<!-- css does not provide a click event pseudo class. You can use :active. 
+		     However, this will applay th efecto only while clicking.
+		     To solve that problem we can use the TRANSITION HACK or the CHECKBOX HACK -->
+
+       <h2> CSS CLICK EVENT SIMULATION</h2>
+        
+       <h3>:active-- the changes are not kept</h3> 
+       <img class="changeme" src="arale.jpg">   
+       
+
+	    <!-- TRANSITION HACK
+	      Delay any change to a large number of seconds to make sure the changes will stay once they’ve been set. 
+	      Then, as we want the changes to start inmediatly when we click, not after 999999s, override the delay with a delay of 0 in the :active selector => This is done in the inner element
+	    -->
+       <h3>transition hack-- the change is kept but cannot be reversed</h3> 
+       <div class="outer"> 
+        	<img class="changeme-t" src="arale.jpg">       	
+       </div>
+             
+        <!--What if we want to be able to reverse the changes? We can use the CHECKBOX HACK-->
+
+        <!-- CHECKBOX HACK
+            The idea is to use the :checked pseudo-class and, when checked, apply the style rule to a sibling element -->
+        
+        <h3>checkbox hack-- the change can be reversed</h3> 
+        <input class="shown" type="checkbox" id="change"> 
+        <label class="shown" for="change">Click me!</label>
+		<img class="changeme-check" src="arale.jpg">
+		    <!-- What if we want to hade the label and thecheckbox? -->
+		<h3>checkbox hack with hidden checkbox and label </h3>
+        <input class="hidden" type="checkbox" id="change-hidden"> 
+        <label class="hidden" for="change-hidden">
+			<img class="changeme-check" src="arale.jpg">
+	    </label>
+
+		<!-- USING TARGET PESUDO CLASS TO SIMULATE CLICK EVENTS
+	    This pseudo-class refers to an link anchor (the # you can see sometimes at the end of an URL).
+        The element the # points to (the element with an ID mtching the #) is the selected element.-->
+            <!--to remove the target effect, delete the # fron teh url-->
+
+        <div style="clear:both"></div>
+        <a class= "btn" href="#scale-box">Scale A!</a>
+        <a class= "btn" href="#scale-box-2">Scale B!</a>
+        <div style="clear:both"></div>
+        <div id="scale-box" class="box scaleme-box" > A </div>
+        <div id="scale-box-2" class="box scaleme-box" > B </div>
+
+
+    <!-- ROTATE-->   
+        <h2>ROTATE</h2>
+        <div> <!--need the outer div because we are going to use the ntn-clild() selector -->
+        	<div class="box rot color2">One</div>
+			<div class="box rot color2">Two</div>
+			<div class="box rot color2">Three</div>
+        </div>
+
+            <!-- We can also use the rotateX, rotateY and rotateZ functions(the z is a 3D rotation)-->
+        <div> 
+        	<div class="box rotx color2">One</div>
+			<div class="box rotx color2">Two</div>
+			<div class="box rotx color2">Three</div>
+        </div>
+
+
+    
+    <!-- SKEW : you get a perspective effect-->
+    	<h2>SKEW</h2> 
+        <div> <!--need the outer div because we are going to use the ntn-clild() selector -->
+        	<div class="box sk color2">One</div>
+			<div class="box sk color2">Two</div>
+			<div class="box sk color2">Three</div>
+        </div>
+
+
+
+     <!-- TRANSLATE: Move elements-->
+    	<h2>TRANSLATE</h2> 
+        <div> <!--need the outer div because we are going to use the ntn-clild() selector -->
+        	<div class="box tr color2">One</div>
+			<div class="box tr color2">Two</div>
+			<div class="box tr color2">Three</div>
+        </div>
+
+
+        <div> <!--need the outer div because we are going to use the ntn-clild() selector -->
+        	<div class="box trx color2">One</div>
+			<div class="box trx color2">Two</div>
+			<div class="box trx color2">Three</div>
+        </div>
+
+
+     <!--transforming elements doesn’t affect the rest of the layout. So you can create interetng effects-->
+
+        
+   	 <!--MULTIPLE TRANSFORMS AT ONCE -->  
+
+   	  <input class="hidden" type="checkbox" id="changeme"> 
+      <label class="shown" for="changeme">Click me!</label>
+  	  <div class="box multi"></div> 
+
+  	  <br>	  <br>	  <br>	  <br>	  <br>	  <br>
+
+           
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+	<script>
+	$(document).ready(function() {
+
+			/** on hover **/          
+		    $(".scale-h-js").hover(function(){
+				    //USING ANIMATE ON WIDTH AND HEIGHT
+				    //% can no be used directly. We need to define the specific final witdth and height the element			
+					var current_width=$(this).width(); //we can also get a css value ussing css("property-name")
+					var current_height=$(this).height();
+					var new_width= current_width*2;
+					var new_height = current_height*0.5;	
+		            $(this).animate({width: new_width, height:new_height});             
+
+		       },function(){  //we need asecong funtion to define what to do on hover out. Otherwise, it will repeat the same action
+		            	//$(this).stop();
+		    });         
+
+	        
+	       /** Adding/removing a class ***/
+	       $(".scale-c-js").hover(function(){  //we can use the CLICK event and the tranformation will stay
+	          $(this).addClass("scalemejs");
+	       });
+
+			
+	        /****hover toggle***/
+			$(".scale-t-js").hover(function(){
+	          $(this).toggleClass("scalemejs");
+	       });
+
+            /*** on click***/
+			$(".scale-ck-js").click(function(){  //we can use the CLICK event and the tranformation will stay
+			  if ($(this).hasClass('scalemejs')) {  //To check if an element has not a class if (!$(this).hasClass("test"))
+			       $(this).removeClass("scalemejs");     
+			  }else{
+			  	  $(this).addClass("scalemejs");
+			  }
+	        
+	        });
+  
+		
+          
+       
+
+	});		//ready
+	</script>
+
+</body>
+</html>

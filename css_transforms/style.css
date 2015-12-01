@@ -1,0 +1,216 @@
+body {
+    background:#ccc;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.wrap {
+    width:100%;
+    max-width:1000px;
+    margin:0px auto;
+}
+
+.box {
+	width: 150px;
+	height: 150px;
+	margin: 50px 20px 10px 20px;
+	background-color: #B556B3;
+	display:inline-block;
+}
+
+
+.btn{
+	padding:20px;
+	background-color: #159C55;
+	color: #fff;
+	box-shadow: 5px 5px 5px #888888;
+	display:inline-block;
+	width:150px;
+	margin: 20px 0;
+}
+
+.color2{
+	background-color: #FB9C07;
+}
+
+
+    /*SCALE*/
+div.scale:nth-child(2) {
+	transform: scale(1.5);
+}
+
+.box.scale-h:hover{
+	-ms-transform: scale(0.5, 2); /* IE 9 */
+   		-webkit-transform: scale(0.5, 2); /* Chrome, Safari, Opera */
+   		transform: scale(0.5, 2);
+   		 transform-origin: 200px -100px;/** By default, transformed elements keep their center point where it is
+                                       This can be changed with the transform-origin property. 
+                                       Set the x and y values. They can be a % a fixed value or a predefined value (check W3chools: 
+                                       	http://www.w3schools.com/cssref/css3_pr_transform-origin.asp) **/
+}
+
+.scalemejs{ /**added/removed via js**/
+	   -ms-transform: scale(2); /* IE 9 */
+   		-webkit-transform: scale(2); /* Chrome, Safari, Opera */
+   		transform: scale(2);         
+}
+
+
+
+/**simulate click with :active**/
+.changeme:active{	
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	  transform: rotate(45deg);
+ 
+}
+
+
+
+/**transition hack**/
+.changeme-t{
+	transition: all 0s 9999999s;
+}
+
+.outer:active .changeme-t {
+	transition: all 0s;
+	-webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/** chechbox hack***/
+input[type=checkbox].shown:checked ~ .changeme-check {  /** ~any sibbling, + immediate sibbling ***/
+	-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+input[type=checkbox].shown {
+	1display:none
+}
+
+label.shown {
+	display: block;
+	background: #08C;
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 2px;
+	color: white;
+	font-weight: bold;
+}
+   /** for the hidden label and checkbox***/
+input[type=checkbox].hidden:checked + label > .changeme-check {  /** ~any sibbling, + immediate sibbling ***/
+	-webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+input[type=checkbox].hidden {
+	display:none;
+}
+
+label.hidden {
+	
+}
+
+
+/**target hack***/
+.scaleme-box:target{
+	-ms-transform: scale(0.5); /* IE 9 */
+   	-webkit-transform: scale(0.5); /* Chrome, Safari, Opera */
+   	transform: scale(0.5);  		
+}
+
+
+
+
+	/*ROTATE*/
+
+div.rot:nth-child(1) {  /*the div with class rot taht is the 1st child of its parent*/
+	transform: rotate(16.5deg);
+}
+div.rot:nth-child(2) {
+	transform: rotate(33deg);
+	transform-origin: 200px 100px;
+}
+div.rot:nth-child(3) {
+	transform: rotate(66deg);
+
+}
+
+
+  /*rotate x, y , z*/
+div.rotx:nth-child(1):hover {  /*the div with class rot taht is the 1st child of its parent*/
+	transform: rotateX(180deg);
+}
+
+div.rotx:nth-child(2):hover {
+	transform: rotateY(180deg);
+	
+}
+
+div.rotx:nth-child(3):hover { /**+this is a 3D on z axis**/
+	transform: rotateZ(40deg);
+
+}
+
+
+
+ 	/*SKEW*/
+div.sk:nth-child(1) {
+	transform: skewX(16.5deg);
+}
+div.sk:nth-child(2) {
+	transform: skewY(33deg);
+}
+div.sk:nth-child(3) {
+	transform: skewX(16.5deg) skewY(33deg);
+}
+
+	/*TRANSLATE*/
+
+div.tr:nth-child(1):hover {
+	transform: translateX(500px);
+	background-color: red;
+}
+div.tr:nth-child(2):hover {
+	transform: translateY(200px);
+	background-color: red;
+}
+div.tr:nth-child(3):hover {
+	transform: translate(-50px, -50px);
+	background-color: red;
+}
+
+
+
+/*translate x,y , z*/
+
+div.trx:nth-child(1):hover {  /*the div with class rot taht is the 1st child of its parent*/
+	transform: translateX(100px);
+}
+
+div.trx:nth-child(2):hover {
+	transform: translateY(100px);
+	
+}
+
+div.trx:nth-child(3):hover {  /***move it away from the user**/
+	transform: translateZ(-100px);
+
+}
+
+
+/*multiple transforms*/
+input[type=checkbox].hidden:checked ~.multi{
+	transform: scale(2) skew(-20deg) translateX(200px)
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+body {
+    background:#ccc;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.wrap {
+    width:100%;
+    max-width:1000px;
+    margin:0px auto;
+}
+
+.box {
+	width: 150px;
+	height: 150px;
+	margin: 50px 20px 10px 20px;
+	background-color: #B556B3;
+	display:inline-block;
+}
+
+
+.btn{
+	padding:20px;
+	background-color: #159C55;
+	color: #fff;
+	box-shadow: 5px 5px 5px #888888;
+	display:inline-block;
+	width:150px;
+	margin: 20px 0;
+}
+
+.color2{
+	background-color: #FB9C07;
+}
+
+/*For each keyframe, you provide a list of CSS properties.
+These should be properties that can be transitioned. */
+
+
+/* The animation code */
+@keyframes colorchange {
+    from {background-color: blue;}
+    to {background-color: yellow;}
+}
+
+/*To apply the animation to an element, use its name as the animation-namw property*/
+.animateme-color {    
+    background-color: blue;
+    animation-name: colorchange;
+    animation-duration: 6s;
+}
+
+
+
+
+
+@keyframes bounce {
+    from { top: 50px; }
+    25% { top: 350px; }
+    50% { top: 50px; }
+    75% { top: 350px; }
+    to { top: 50px; }
+}
+
+
+.animateme {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    animation-duration: 20s;  /*duration---after 5 sec top will be 350, ater 5 more 50...*/
+    animation-name: bounce;   /*animtion name. */
+                               
+    animation-iteration-count: infinite; /*how many times to prfor the animation
+                                           can be a fixed number or infinite*/   
+}
+
+@keyframes bounceb { /*we are animating 2 properties her. 
+                      You can animaate as many properties as you want*/
+    from { top: 50px; transform: scale(1); }
+    25% { top: 350px; transform: scale(1.25); }
+    50% { top: 50px; transform: scale(1); }
+    75% { top: 350px; transform: scale(1.25); }
+    to { top: 50px; transform: scale(1); }
+}
+
+.animateme2 {
+    position: absolute;
+    left: 400px;
+    top: 50px;
+    animation-duration: 20s;
+    animation-name: bounceb;    
+                               
+    animation-iteration-count: infinite; /*how many times to prfor the animation
+                                           can be a fixed number or infinite*/   
+}
+
+
+/***FOR ANIMATIONS, Specify the keyframes for every browser you want to targetn*/
+@-moz-keyframes bouncec {
+from { top: 50px; }
+25% { top: 350px; }
+50% { top: 50px; }
+75% { top: 350px; }
+to { top: 50px; }
+}
+@-webkit-keyframes bouncec {
+from { top: 50px; }
+25% { top: 350px; }
+50% { top: 50px; }
+75% { top: 350px; }
+to { top: 50px; }
+}
+
+@-o-keyframes bouncec {
+from { top: 50px; }
+25% { top: 350px; }
+50% { top: 50px; }
+75% { top: 350px; }
+to { top: 50px; }
+}
+@-ms-keyframes bouncec {
+from { top: 50px; }
+25% { top: 350px; }
+50% { top: 50px; }
+75% { top: 350px; }
+to { top: 50px; }
+}
+
+.animateme3 {
+    position: absolute;
+    left: 400px;
+    top: 50px;
+-moz-animation-duration: 20s;
+-moz-animation-name: bouncec;
+-moz-animation-iteration-count: infinite;
+-webkit-animation-duration: 20s;
+-webkit-animation-name: bouncec;
+-webkit-animation-iteration-count: infinite;
+-o-animation-duration: 20s;
+-o-animation-name: bouncec;
+-o-animation-iteration-count: infinite;
+-ms-animation-duration: 20s;
+-ms-animation-name: bouncec;
+-ms-animation-iteration-count: infinite;
+}
+
+
+
+@keyframes skew {
+  0% {
+    transform: skewX(20deg);
+  }
+  100% {
+    transform: skewX(-20deg);
+  }
+}
+
+.animation4 {
+  display: inline-block;
+  background-color: #0074d9;
+  height: 100px;
+  width: 100px;
+  font-size: 1px;
+  padding: 1px;
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
+  -webkit-animation: skew 3s infinite;
+          animation: skew 3s infinite;
+  -webkit-transform: skew(20deg);
+      -ms-transform: skew(20deg);
+          transform: skew(20deg);
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  opacity: .7;
+}
+
+
+@-webkit-keyframes roll {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes roll {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+
+.element {
+  display: inline-block;
+  background-color: #0074d9;
+  height: 100px;
+  width: 100px;
+  font-size: 1px;
+  padding: 1px;
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
+  -webkit-animation: roll 3s infinite;
+          animation: roll 3s infinite;
+  -webkit-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+  opacity: .7;
+}
+
+.element2{
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+
+
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+}

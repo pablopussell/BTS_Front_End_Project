@@ -1,0 +1,194 @@
+body {
+    background:#ccc;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.wrap {
+    width:100%;
+    max-width:1000px;
+    margin:0px auto;
+}
+
+.box {
+	width: 150px;
+	height: 150px;
+	margin: 50px 20px 10px 20px;
+	background-color: #B556B3;
+	display:inline-block;
+}
+
+
+.btn{
+	padding:20px;
+	background-color: #159C55;
+	color: #fff;
+	box-shadow: 5px 5px 5px #888888;
+	display:inline-block;
+	width:150px;
+	margin: 20px 0;
+}
+
+.color2{
+	background-color: #FB9C07;
+}
+
+
+/**Apply a transition to the scale transform***/
+.box.scale-h:hover{
+	-ms-transform: scale(0.5, 2); /* IE 9 */
+   		-webkit-transform: scale(0.5, 2); /* Chrome, Safari, Opera */
+   		transform: scale(0.5, 2);
+   		transition-duration: 10s;
+}
+
+
+
+/**target TEXT transition***/
+.bigger:target{
+	color:red;
+	font-size: 3em;	
+	transition-property: all;	/*all properties. can also specify only one*/
+	transition-duration: 6s;
+    transition-timing-function: linear;
+    transition-delay: 2s;
+}
+
+/*IMG effects***/
+
+/*img1*/
+
+ul li {
+    display: inline-block;
+    list-style: none; 
+}
+
+
+.img-1 {
+    position:relative;
+    width:250px;
+    height:250px;
+    overflow:hidden;
+    float:left;
+    margin-right:0px;
+    background-color:rgba(26,76,110,0.5)
+}
+
+.img-1 p,.img-1 h2 {
+	max-width:200px;
+    color:#fff;
+    text-align:center;
+    margin-top: 40px;
+}
+
+
+.img-1 img {
+    position:absolute;
+    margin:0px;
+    right:0;
+    top:0;
+    cursor:pointer;
+    -webkit-transition:top .4s ease-in-out,right .4s ease-in-out; /*animate top and right properties*/
+    -moz-transition:top .4s ease-in-out,right .4s ease-in-out;
+    -o-transition:top .4s ease-in-out,right .4s ease-in-out;
+    transition:top .4s ease-in-out,right .4s ease-in-out
+}
+
+.img-1 img.top:hover { /* The top and right positon moves the images away on hovee */
+    top:-300px;
+    right:-300px;
+    padding-bottom:300px; /*to make the transition smooth when clicking near to the left-botton corner*/
+    padding-left:300px
+ 
+}
+
+/*img2*/
+ul li {
+    display: inline-block;
+    list-style: none; 
+}
+
+
+.img-2 {
+    position:relative;
+    width:259px;
+    height:299px;
+    overflow:hidden;
+    float:left;
+    margin-right:0px;
+    background-color:rgba(26,76,110,0.5)
+}
+
+.img-2 p,.img-2 h2 {
+	margin-left:-20px;
+	margin-right: 10px;
+    color:#fff;
+    text-align:center;
+    margin-top: 10px;
+}
+
+
+.img-2 img {
+    position:absolute;
+    margin:0px;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+     -webkit-transition:bottom .4s ease-in-out;
+    -moz-transition:bottom .4s ease-in-out;
+    -o-transition:bottom .4s ease-in-out;
+    transition:bottom .4s ease-in-out
+}
+
+.img-2 img.top:hover { /* The top and right positon moves the images away on hovee */
+     bottom:-150px;
+     padding-top:100px
+ 
+}
+
+
+/*img3*/
+ul li {
+    display: inline-block;
+    list-style: none; 
+}
+
+
+.img-3 {
+    position:relative;
+    width:259px;
+    height:299px;
+    overflow:hidden;
+    float:left;
+    margin-right:0px;
+    background-color:rgba(26,76,110,0.5)
+}
+
+.img-3 p,.img-3 h2 {
+	margin-left:-20px;
+	margin-right: 10px;
+    color:#fff;
+    text-align:center;
+    margin-top: 10px;
+}
+
+
+.img-3 img {
+    position:absolute;
+    margin:0px;
+    left:0;
+    bottom:0;
+    cursor:pointer;
+     -webkit-transition:bottom .4s ease-in-out;
+    -moz-transition:bottom .4s ease-in-out;
+    -o-transition:bottom .4s ease-in-out;
+    transition:bottom .4s ease-in-out
+}
+
+.img-3 img.top:hover { /* The top and right positon moves the images away on hovee */
+     bottom:-150px;
+     padding-top:100px
+ 
+}
+
+

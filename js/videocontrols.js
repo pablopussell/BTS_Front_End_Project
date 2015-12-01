@@ -32,19 +32,20 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
        
        // if play button is pushed, the media starts playing
        function startPlayback() {
+          $("#bgvid").show();
           document.getElementById("bgvid").play();
-          document.getElementById("Nav").style.background="rgba(255,255,255,0.8)";
           document.getElementById("controls").style.background="rgba(255,255,255,0.8)";
        }
        // if pause button is pushed, the media play is paused
        function pausePlayback() {
           document.getElementById("bgvid").pause();
-          document.getElementById("Nav").style.background="rgba(255,255,255,1)";
           document.getElementById("controls").style.background="rgba(255,255,255,1)";
        }
        //if stop button is pushed, the media play stops and the current play time is reset to 0
        function stopPlayback() {
           var bgvid = document.getElementById("bgvid");
+          bgvid.pause();
+          bgvid.currentTime=62;
           endPlayback();
        }  
   /**if the plus button is pushed, the sound volume is increased by 10%
@@ -84,9 +85,9 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
           document.getElementById("start").disabled=false;
           document.getElementById("pause").disabled=true;
           document.getElementById("stop").disabled=true;
-          document.getElementById("Nav").style.background="rgba(255,255,255,1)";
           document.getElementById("controls").style.background="rgba(255,255,255,1)";
-          $("#controls").hide();
-          $("#bgvid").fadeOut("12000");
-          $("bts-logo-div").fadeIn("12000");
+          $("#bgvid").fadeOut(3000);
+          /**$("#controls").hide();
+          $("#bgvid").fadeOut("24000");
+          $("bts-logo-div").fadeIn("24000");**/
        }
