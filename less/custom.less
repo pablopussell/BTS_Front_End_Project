@@ -116,7 +116,7 @@ video#bgvid {
 }
 
 #controls {
-		background-color: rgba(255,255,255,0.8);
+		background-color: rgba(255,255,255,1);
         display: block;
         margin: 10px 10px;
         position:absolute;
@@ -127,7 +127,7 @@ video#bgvid {
 }
 
 .icon-play, .icon-pause, .icon-stop {
-	color: black;
+	color:@black;
 	font-size: 1em;
 }
 
@@ -185,6 +185,13 @@ nav h2 {
 	width:19%;
 	font-weight: bold;
     letter-spacing: 0.2em;
+}
+
+@media screen and (max-width: 550px) {
+	
+	.Menu {
+    	letter-spacing: 0em;    	
+	}
 }
 
 .Menu:hover {

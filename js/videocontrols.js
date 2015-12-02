@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
              bgvid.removeAttribute("controls");
              // display the custom buttons and the progress bar
              document.getElementById("controls").style.display="block";
-             /** add event-handlers to control the video element
-             bgvid.addEventListener("timeupdate", reportProgress, false);
-             bgvid.addEventListener("ended", endPlayback, false);**/
+             //add event-handlers to control the video element
+             bgvid.addEventListener("ended", endPlayback, false);
              // enable and disable the controls buttons to reflect the player state
              bgvid.addEventListener("play",function() {
                  document.getElementById("start").disabled=true;
@@ -20,6 +19,7 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
              bgvid.addEventListener("pause", function() {
                  document.getElementById("start").disabled=false;
                  document.getElementById("pause").disabled=true;
+                 document.getElementById("stop").disabled=false;
                 }, false);
            // add event-handlers for the control buttons
              document.getElementById("start").addEventListener("click",startPlayback,false);
@@ -32,62 +32,28 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
        
        // if play button is pushed, the media starts playing
        function startPlayback() {
-          $("#bgvid").show();
-          document.getElementById("bgvid").play();
-          document.getElementById("controls").style.background="rgba(255,255,255,0.8)";
+        document.getElementById("bgvid").currentTime=0;
+        document.getElementById("bgvid").play();
+        $("bts-logo-div").fadeOut(3000);
+        $("#bgvid").fadeIn(3000);
        }
+
        // if pause button is pushed, the media play is paused
        function pausePlayback() {
           document.getElementById("bgvid").pause();
-          document.getElementById("controls").style.background="rgba(255,255,255,1)";
        }
+
        //if stop button is pushed, the media play stops and the current play time is reset to 0
        function stopPlayback() {
-          var bgvid = document.getElementById("bgvid");
-          bgvid.pause();
-          bgvid.currentTime=62;
           endPlayback();
        }  
-  /**if the plus button is pushed, the sound volume is increased by 10%
-  function volumeUp() {
-      //get the current volume
-     var bgvid = document.getElementById("bgvid");
-     var volume = Math.floor(bgvid.volume * 10)/10;
-     bgvid.muted = false;
-     if(volume >= 0.9) bgvid.volume = 1;
-     else bgvid.volume += 0.1;
-  }  
-  //if the minus button is pushed, the sound volume is decreased by 10%
-  function volumeDown() {
-    //get the current volume
-    var bgvid = document.getElementById("bgvid");
-    var volume = Math.floor(bgvid.volume * 10)/10;
-    bgvid.muted = false;
-    if(volume <= 0.1) bgvid.volume = 0;
-    else bgvid.volume -= 0.1;
-  }m
-  
- //if the mute button is pushed, the player wilwill toggle between Mute and Unmute state
-  function toggleMute() {
-    var bgvid = document.getElementById("bgvid");
-    var mute = document.getElementById("mute");
-    if(bgvid.muted) {
-    mute.innerHTML = "Mute";
-    bgvid.muted = false;
-   } else {
-    mute.innerHTML= "Unmute";
-    bgvid.muted = true;
-   }
-  }**/
+
    // when the media play is finished or stopped
    function endPlayback() {
           // reset the state of buttons
           document.getElementById("start").disabled=false;
           document.getElementById("pause").disabled=true;
           document.getElementById("stop").disabled=true;
-          document.getElementById("controls").style.background="rgba(255,255,255,1)";
           $("#bgvid").fadeOut(3000);
-          /**$("#controls").hide();
-          $("#bgvid").fadeOut("24000");
-          $("bts-logo-div").fadeIn("24000");**/
+          $("bts-logo-div").fadeIn(3000);
        }
