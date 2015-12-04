@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
 
        // if pause button is pushed, the media play is paused
        function pausePlayback() {
-          document.getElementById("bgvid").pause();
+        document.getElementById("bgvid").pause();
        }
 
        //if stop button is pushed, the media play stops and the current play time is reset to 0
