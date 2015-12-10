@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", setupControl, false);
        
        // if play button is pushed, the media starts playing
        function startPlayback() {
+        document.getElementById("start").disabled=true;
+        document.getElementById("pause").disabled=false;
+        document.getElementById("stop").disabled=false;
         document.getElementById("bgvid").currentTime=0;
         document.getElementById("bgvid").play();
         $("bts-logo-div").fadeOut(3000);
